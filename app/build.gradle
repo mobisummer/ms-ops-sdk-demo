@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion "23.0.3"
+
+  defaultConfig {
+    applicationId "com.mbs.sdk.rith.operation.demo"
+    minSdkVersion 14
+    targetSdkVersion 23
+    versionCode 28
+    versionName "1.2.1"
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  signingConfigs {
+    release {
+      storeFile file('ops-demo.keystore')
+      storePassword 'ops_demo'
+      keyAlias 'ops-demo-key'
+      keyPassword 'ops_demo'
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+      signingConfig signingConfigs.release
+    }
+  }
+}
+
+dependencies {
+  compile 'com.android.support:support-v4:23.+'
+
+  compile 'com.mbs.sdk.operation:msopsdk:1.0.3.51'
+
+  testCompile 'junit:junit:4.12'
+}
