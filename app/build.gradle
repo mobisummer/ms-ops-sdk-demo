@@ -29,7 +29,7 @@ android {
     release {
       minifyEnabled true
       shrinkResources true
-      proguardFiles "proguard/proguard_sdk.pro"
+      proguardFiles "proguard-rules.pro"
       signingConfig signingConfigs.release
     }
   }
