@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.mbs.sdk.rich.operation.demo">
+  package="com.mbs.sdk.ads.operation.sample">
 
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -10,19 +10,16 @@
     android:maxSdkVersion="18"/>
 
   <application
+    android:name=".App"
     android:allowBackup="false"
     android:hardwareAccelerated="true"
-    android:icon="@drawable/ic_launcher">
-    <receiver android:name=".ReviveReceiver">
-      <intent-filter>
-        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+    android:icon="@drawable/ic_launcher"
+    android:label="MbsOpSdkSample">
 
-        <category android:name="android.intent.category.HOME"/>
-      </intent-filter>
-      <intent-filter>
-        <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
-      </intent-filter>
-    </receiver>
+    <meta-data
+      android:name="appKey"
+      android:value="fd30cd7d-2f70-6abc-2ace-915cf72b8a30"/>
+
     <activity
       android:name=".MainActivity"
       android:excludeFromRecents="true"
@@ -32,14 +29,6 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <service
-      android:name=".AdService"/>
-
-    <activity
-      android:name="com.mbs.sdk.rich.ads.mediation.mobisummer.ui.interstitial.MbsInterstitialAdActivity"
-      android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-      android:excludeFromRecents="true"
-      android:theme="@android:style/Theme.Translucent"/>
   </application>
 
 </manifest>

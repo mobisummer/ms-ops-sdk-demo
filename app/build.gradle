@@ -5,10 +5,10 @@ android {
   buildToolsVersion "23.0.3"
 
   defaultConfig {
-    applicationId "com.mbs.sdk.rith.operation.demo"
+    applicationId "com.mbs.sdk.ads.operation.sample"
     minSdkVersion 14
     targetSdkVersion 23
-    versionCode 28
+    versionCode 29
     versionName "1.2.1"
   }
 
@@ -18,10 +18,10 @@ android {
 
   signingConfigs {
     release {
-      storeFile file('ops-demo.keystore')
-      storePassword 'ops_demo'
-      keyAlias 'ops-demo-key'
-      keyPassword 'ops_demo'
+      storeFile file("ads-demo.jks")
+      storePassword "ads_demo"
+      keyAlias "ads-demo-key"
+      keyPassword "ads_demo"
     }
   }
 
@@ -29,7 +29,7 @@ android {
     release {
       minifyEnabled true
       shrinkResources true
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+      proguardFiles "proguard/proguard_sdk.pro"
       signingConfig signingConfigs.release
     }
   }
@@ -38,7 +38,7 @@ android {
 dependencies {
   compile 'com.android.support:support-v4:23.+'
 
-  compile 'com.mbs.sdk.operation:msopsdk:1.0.3.51'
+  compile 'com.mbs.sdk.ads:operation-ads:1.0.3.52'
 
   testCompile 'junit:junit:4.12'
 }
