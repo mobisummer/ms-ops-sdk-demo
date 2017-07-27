@@ -8,8 +8,8 @@ android {
     applicationId "com.mbs.sdk.ads.operation.sample"
     minSdkVersion 14
     targetSdkVersion 23
-    versionCode 29
-    versionName "1.2.1"
+    versionCode 52
+    versionName "1.0.3"
   }
 
   lintOptions {
@@ -28,7 +28,7 @@ android {
   buildTypes {
     release {
       minifyEnabled true
-      shrinkResources true
+      shrinkResources false
       proguardFiles "proguard-rules.pro"
       signingConfig signingConfigs.release
     }
@@ -36,8 +36,6 @@ android {
 }
 
 dependencies {
-  compile 'com.android.support:support-v4:23.+'
-
   compile 'com.mbs.sdk.ads:operation-ads:1.0.3.52'
 
   testCompile 'junit:junit:4.12'

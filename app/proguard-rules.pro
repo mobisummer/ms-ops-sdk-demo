@@ -18,6 +18,13 @@
 
 -keepattributes *Annotation*
 -keepattributes Signature
+-keep class com.mbs.sdk.ads.**{
+  *;
+}
 -dontwarn com.mbs.sdk.ads.**
+
+-keep class com.mobisummer.sdk.**{
+  *;
+}
 -dontwarn com.mobisummer.sdk.**
 
